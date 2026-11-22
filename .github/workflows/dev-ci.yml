@@ -1,6 +1,7 @@
 name: Dev CI
+# By hand only, until test-ci has dispatch: service (Phase B2). Then add push, and
+# call test-ci's github_app branch (dev) or v1.
 on:
-  push:
   workflow_dispatch:
 permissions:
   contents: read
@@ -12,7 +13,7 @@ jobs:
       profile: dev-cpu
       script: ci/dev.sh
       args: ${{ vars.TEST_CI_SLEEP || '0' }}
-      dispatch: ${{ vars.TEST_CI_DISPATCH || 'manual' }}
+      dispatch: ${{ vars.TEST_CI_DISPATCH || 'service' }}
     secrets:
+      # No runner-admin-pat: the App makes runner configs
       origin-token: ${{ secrets.BRICS_CI_ORIGIN_TOKEN }}
-      runner-admin-pat: ${{ secrets.RUNNER_ADMIN_PAT }}
