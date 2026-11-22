@@ -1,7 +1,10 @@
 name: Dev CI
-# By hand only, until test-ci has dispatch: service (Phase B2). Then add push, and
-# call test-ci's github_app branch (dev) or v1.
+# A push starts a run, so its result shows on the commit; runs started by hand
+# (workflow_dispatch) don't show there. Until test-ci has dispatch: service (Phase B2),
+# set TEST_CI_DISPATCH to manual and give each run a runner with test-ci-app's
+# tools/app-dispatch.py. Then call test-ci's github_app branch (dev) or v1.
 on:
+  push:
   workflow_dispatch:
 permissions:
   contents: read
