@@ -1,6 +1,6 @@
 # test-ci-dev-test-GithubApp
 
-A copy of [test-ci-dev-test](https://github.com/i-aye-eye/test-ci-dev-test) for Phase B2: runners come from the dev GitHub App (`i-aye-eye-test-ci-dev`), not a PAT.
+A copy of [test-ci-dev-test](https://github.com/i-aye-eye/test-ci-dev-test) for Github App (runners come from the dev GitHub App (`i-aye-eye-test-ci-dev`), not a PAT).
 
 - No `RUNNER_ADMIN_PAT` secret, and the workflow passes none.
 - Not registered with ci-service yet. In B2 it's registered through the App, by name.
