@@ -10,7 +10,7 @@ permissions:
   contents: read
 jobs:
   dev:
-    uses: i-aye-eye/test-ci/.github/workflows/gh200.yml@github_app
+    uses: i-aye-eye/test-ci/.github/workflows/gh200.yml@v1
     with:
       profile: dev-cpu
       script: ci/dev.sh
