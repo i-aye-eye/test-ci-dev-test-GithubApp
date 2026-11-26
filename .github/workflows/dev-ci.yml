@@ -8,7 +8,6 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  id-token: write
 jobs:
   dev:
     uses: i-aye-eye/test-ci/.github/workflows/gh200.yml@github_app
@@ -17,6 +16,3 @@ jobs:
       script: ci/dev.sh
       args: ${{ vars.TEST_CI_SLEEP || '0' }}
       dispatch: ${{ vars.TEST_CI_DISPATCH || 'service' }}
-    secrets:
-      # No runner-admin-pat: the App makes runner configs
-      origin-token: ${{ secrets.BRICS_CI_ORIGIN_TOKEN }}
