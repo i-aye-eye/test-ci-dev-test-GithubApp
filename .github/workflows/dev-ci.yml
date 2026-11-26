@@ -11,7 +11,7 @@ permissions:
   id-token: write
 jobs:
   dev:
-    uses: i-aye-eye/test-ci/.github/workflows/gh200.yml@v0
+    uses: i-aye-eye/test-ci/.github/workflows/gh200.yml@github_app
     with:
       profile: dev-cpu
       script: ci/dev.sh
